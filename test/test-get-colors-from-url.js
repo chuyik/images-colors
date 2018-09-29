@@ -1,23 +1,5 @@
-const assert = require('power-assert')
-const path = require('path')
-const { getColorsFromUrl, getColorsFromFile } = require('../')
-
-async function assertThrowsAsync(fn, regExp) {
-  let f = () => {};
-  try {
-    await fn();
-  } catch(e) {
-    f = () => {throw e};
-  } finally {
-    assert.throws(f, regExp);
-  }
-}
-
-function assertColorArray (colors) {
-  assert(colors && colors.length > 1);
-  assert(colors[0].hex.startsWith('#'));
-  assert(Number.isFinite(colors[0].hist));
-}
+const { assertThrowsAsync, assertColorArray } = require('./_helper')
+const { getColorsFromUrl } = require('../')
 
 describe('getColorsFromUrl()', () => {
   it('should return colors with valid jpeg url', async () => {
@@ -46,19 +28,6 @@ describe('getColorsFromUrl()', () => {
   it('should return colors with non-accessible url', async () => {
     await assertThrowsAsync(() =>
       getColorsFromUrl('http://facebook.com/1.png'), /ETIMEDOUT/
-    )
-  })
-})
-
-describe('getColorsFromFile()', () => {
-  it('should return colors with valid jpeg file', async () => {
-    let colors = await getColorsFromFile(path.join(__dirname, 'pic.jpg'))
-    assertColorArray(colors)
-  })
-
-  it('should return colors with non-existed file', async () => {
-    await assertThrowsAsync(() =>
-      getColorsFromFile('./abc.jpg'), /ENOENT/
     )
   })
 })

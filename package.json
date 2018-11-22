@@ -1,6 +1,6 @@
 {
   "name": "@o2team/images-colors",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "get images colors",
   "main": "index.js",
   "scripts": {

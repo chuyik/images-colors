@@ -4,7 +4,7 @@ const { getColorsFromFile } = require('../')
 
 describe('getColorsFromFile()', () => {
   it('should return colors with valid jpeg file', async () => {
-    let colors = await getColorsFromFile(path.join(__dirname, 'pic.jpg'))
+    let colors = await getColorsFromFile(path.join(__dirname, 'pic.JPG'))
     assertColorArray(colors)
   })
 

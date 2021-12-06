@@ -8,12 +8,10 @@ Image Colors
 - 支持网络图片和本地图片
 
 # 下载
-JNPM 项目地址：http://npm.m.jd.com/package/@o2team/images-colors
-   
 ```bash
-npm install @o2team/images-colors --registry=http://registry.m.jd.com
+npm install images-colors
 ```
 
 # 作者
 
-- 朱奕腾 [zhuyiteng@jd.com](mailto:zhuyiteng@jd.com)
+- chuyik

@@ -1,6 +1,6 @@
 {
   "name": "images-colors",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "get images colors",
   "main": "index.js",
   "scripts": {
